@@ -1,0 +1,12 @@
+{
+  "event_id": "092108-004-sample-007",
+  "event_type": "NOTICE_ACKNOWLEDGED",
+  "aggregate_type": "course_adoption",
+  "aggregate_id": "course_adoption-0187",
+  "occurred_at": "2026-09-19T09:30:00+08:00",
+  "version": 2,
+  "summary": "学校确认收讫紧急纠错通知并安排课堂说明",
+  "refs": {
+    "correction": "correction_notice-2026-0917"
+  }
+}

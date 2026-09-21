@@ -1,0 +1,14 @@
+{
+  "event_id": "092108-004-sample-004",
+  "event_type": "ISSUE_REPORTED",
+  "aggregate_type": "correction_notice",
+  "aggregate_id": "correction_notice-2026-0917",
+  "occurred_at": "2026-09-17T09:12:00+08:00",
+  "version": 1,
+  "summary": "授课教师上报第三章深度伪造案例的法规引用已过时",
+  "report_key": "ch3-deepfake-reg-2026",
+  "refs": {
+    "content_unit": "content_unit-ch3",
+    "edition": "textbook_edition-2025-2"
+  }
+}

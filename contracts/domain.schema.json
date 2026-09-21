@@ -20,19 +20,33 @@
       "type": "string",
       "enum": [
         "EDITION_RELEASED",
+        "PRINT_RUN_RECORDED",
         "ISSUE_REPORTED",
         "CORRECTION_APPROVED",
+        "URGENT_NOTICE_DISPATCHED",
+        "NOTICE_ACKNOWLEDGED",
+        "CONTENT_SUPERSEDED",
+        "PUBLICATION_HELD",
+        "LICENSE_EXPIRY_FLAGGED",
         "ADOPTION_FROZEN",
-        "NOTICE_ACKNOWLEDGED"
+        "UPDATE_SCHEDULED",
+        "INVENTORY_DISPOSED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
+        "textbook_title",
         "textbook_edition",
         "content_unit",
+        "concept_entry",
+        "case_material",
+        "regulation_citation",
+        "image_license",
         "correction_notice",
-        "course_adoption"
+        "supplement",
+        "course_adoption",
+        "print_run"
       ]
     },
     "aggregate_id": {
@@ -50,6 +64,29 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "report_key": {
+      "type": "string",
+      "minLength": 1,
+      "description": "上报去重键：同一问题的重复上报使用相同值，归并处理，不触发多次更正"
+    },
+    "refs": {
+      "type": "object",
+      "description": "关联聚合标识：键为关系角色（如 edition、print_run、content_unit、correction、adoption、replacement），值为聚合标识或其列表",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        ]
+      }
     }
   },
   "additionalProperties": true

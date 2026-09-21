@@ -1,0 +1,12 @@
+{
+  "event_id": "092108-004-sample-011",
+  "event_type": "INVENTORY_DISPOSED",
+  "aggregate_type": "print_run",
+  "aggregate_id": "print_run-2025-2-03",
+  "occurred_at": "2026-09-21T09:00:00+08:00",
+  "version": 2,
+  "summary": "受影响印次库存封存待调换，处置记录关联对应勘误",
+  "refs": {
+    "correction": "correction_notice-2026-0917"
+  }
+}

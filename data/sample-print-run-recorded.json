@@ -1,0 +1,12 @@
+{
+  "event_id": "092108-004-sample-002",
+  "event_type": "PRINT_RUN_RECORDED",
+  "aggregate_type": "print_run",
+  "aggregate_id": "print_run-2025-2-03",
+  "occurred_at": "2026-08-30T09:00:00+08:00",
+  "version": 1,
+  "summary": "登记2025年版第2版次第3次印刷及入库数量",
+  "refs": {
+    "edition": "textbook_edition-2025-2"
+  }
+}

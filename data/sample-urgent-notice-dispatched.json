@@ -1,0 +1,17 @@
+{
+  "event_id": "092108-004-sample-006",
+  "event_type": "URGENT_NOTICE_DISPATCHED",
+  "aggregate_type": "correction_notice",
+  "aggregate_id": "correction_notice-2026-0917",
+  "occurred_at": "2026-09-18T10:30:00+08:00",
+  "version": 3,
+  "summary": "向采用受影响印次与章节的学校发出紧急纠错通知",
+  "refs": {
+    "print_run": "print_run-2025-2-03",
+    "content_unit": "content_unit-ch3",
+    "adoption": [
+      "course_adoption-0187",
+      "course_adoption-0234"
+    ]
+  }
+}

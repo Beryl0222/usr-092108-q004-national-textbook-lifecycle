@@ -1,0 +1,13 @@
+{
+  "event_id": "092108-004-sample-008",
+  "event_type": "CONTENT_SUPERSEDED",
+  "aggregate_type": "case_material",
+  "aggregate_id": "case_material-deepfake-2024",
+  "occurred_at": "2026-09-19T14:00:00+08:00",
+  "version": 2,
+  "summary": "原深度伪造案例因平台下线失效，登记替代案例，原课堂依据保留",
+  "refs": {
+    "replacement": "case_material-deepfake-2026",
+    "regulation_citation": "regulation_citation-algo-2026"
+  }
+}

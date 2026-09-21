@@ -1,0 +1,13 @@
+{
+  "event_id": "092108-004-sample-010",
+  "event_type": "LICENSE_EXPIRY_FLAGGED",
+  "aggregate_type": "image_license",
+  "aggregate_id": "image_license-fig-3-2",
+  "occurred_at": "2026-09-20T08:00:00+08:00",
+  "version": 1,
+  "summary": "图3-2素材授权即将到期，定位引用该素材的数字课件与公开页面",
+  "exposed_in": [
+    "courseware://national-textbook/ch3/slides-v4",
+    "https://publisher.example/pages/ch3-fig2"
+  ]
+}

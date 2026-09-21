@@ -1,0 +1,15 @@
+{
+  "event_id": "092108-004-sample-009",
+  "event_type": "PUBLICATION_HELD",
+  "aggregate_type": "supplement",
+  "aggregate_id": "supplement-algo-governance-2026",
+  "occurred_at": "2026-09-20T16:40:00+08:00",
+  "version": 3,
+  "summary": "算法治理补充材料一处表述存在争议，暂缓发布并保留异议",
+  "dissent": [
+    {
+      "reviewer": "policy-expert-02",
+      "opinion": "平台责任一节需待主管部门释义后再定稿"
+    }
+  ]
+}

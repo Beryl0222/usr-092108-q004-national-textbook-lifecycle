@@ -1,0 +1,13 @@
+{
+  "event_id": "092108-004-sample-005",
+  "event_type": "CORRECTION_APPROVED",
+  "aggregate_type": "correction_notice",
+  "aggregate_id": "correction_notice-2026-0917",
+  "occurred_at": "2026-09-18T09:00:00+08:00",
+  "version": 2,
+  "summary": "编写组与政策专家按分工复核通过第三章法规引用勘误",
+  "refs": {
+    "content_unit": "content_unit-ch3",
+    "regulation_citation": "regulation_citation-algo-2026"
+  }
+}
