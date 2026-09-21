@@ -5,5 +5,10 @@
   "aggregate_id": "national_textbook_lifecycle-001",
   "occurred_at": "2026-09-20T18:00:00+08:00",
   "version": 1,
-  "summary": "登记国家教材版本接续的首条领域记录"
+  "summary": "登记国家教材版本接续的首条版次发布记录",
+  "payload": {
+    "edition_id": "ed-sample-001",
+    "title_id": "tit-sample-001",
+    "edition_label": "第1版"
+  }
 }

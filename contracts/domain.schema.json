@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "国家教材版本接续领域事件",
+  "description": "事件只追加、不可原地改写。已印刷内容只能被勘误标注或后继材料接续，任何业务更正都必须以新事件表达。payload 的条件约束见 allOf。",
   "type": "object",
   "required": [
     "event_id",
@@ -19,17 +20,39 @@
     "event_type": {
       "type": "string",
       "enum": [
+        "TITLE_REGISTERED",
         "EDITION_RELEASED",
+        "PRINTING_RUN_RELEASED",
+        "INVENTORY_DISPOSED",
+        "CHAPTER_PUBLISHED",
+        "CONCEPT_PUBLISHED",
+        "CASE_PUBLISHED",
+        "REGULATION_CITED",
+        "IMAGE_LICENSED",
+        "IMAGE_USAGE_REGISTERED",
+        "CONTENT_SUPERSEDED",
+        "SUPPLEMENT_PUBLISHED",
         "ISSUE_REPORTED",
-        "CORRECTION_APPROVED",
+        "ISSUE_DEDUPED",
+        "REVIEW_ASSIGNED",
+        "REVIEW_APPROVED",
+        "REVIEW_REJECTED",
+        "REVIEW_HELD",
+        "CORRECTION_PUBLISHED",
+        "NOTIFICATION_SENT",
+        "NOTICE_ACKNOWLEDGED",
+        "ADOPTION_REGISTERED",
         "ADOPTION_FROZEN",
-        "NOTICE_ACKNOWLEDGED"
+        "UPDATE_SCHEDULED",
+        "UPDATE_APPLIED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
+        "textbook_catalog",
         "textbook_edition",
+        "printing_run",
         "content_unit",
         "correction_notice",
         "course_adoption"
@@ -50,7 +73,333 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object"
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": { "properties": { "event_type": { "const": "TITLE_REGISTERED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "textbook_catalog" },
+          "payload": { "$ref": "#/$defs/title_registered" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "EDITION_RELEASED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "textbook_edition" },
+          "payload": { "$ref": "#/$defs/edition_released" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "PRINTING_RUN_RELEASED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "printing_run" },
+          "payload": { "$ref": "#/$defs/printing_run_released" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "INVENTORY_DISPOSED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "printing_run" },
+          "payload": { "$ref": "#/$defs/inventory_disposed" }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "event_type": { "enum": ["CHAPTER_PUBLISHED", "CONCEPT_PUBLISHED", "CASE_PUBLISHED", "REGULATION_CITED", "IMAGE_LICENSED"] } }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "content_unit" },
+          "payload": { "$ref": "#/$defs/content_published" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "IMAGE_USAGE_REGISTERED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "content_unit" },
+          "payload": { "$ref": "#/$defs/image_usage" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "CONTENT_SUPERSEDED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "content_unit" },
+          "payload": { "$ref": "#/$defs/content_superseded" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "SUPPLEMENT_PUBLISHED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "content_unit" },
+          "payload": { "$ref": "#/$defs/supplement_published" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "ISSUE_REPORTED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "correction_notice" },
+          "payload": { "$ref": "#/$defs/issue_reported" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "ISSUE_DEDUPED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "correction_notice" },
+          "payload": { "$ref": "#/$defs/issue_deduped" }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "event_type": { "enum": ["REVIEW_ASSIGNED", "REVIEW_APPROVED", "REVIEW_REJECTED", "REVIEW_HELD"] } }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "correction_notice" },
+          "payload": { "$ref": "#/$defs/review_event" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "CORRECTION_PUBLISHED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "correction_notice" },
+          "payload": { "$ref": "#/$defs/correction_published" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "NOTIFICATION_SENT" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "correction_notice" },
+          "payload": { "$ref": "#/$defs/notification_sent" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "NOTICE_ACKNOWLEDGED" } } },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "correction_notice" },
+          "payload": { "$ref": "#/$defs/notice_acknowledged" }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "event_type": { "enum": ["ADOPTION_REGISTERED", "ADOPTION_FROZEN", "UPDATE_SCHEDULED", "UPDATE_APPLIED"] } }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": { "const": "course_adoption" },
+          "payload": { "$ref": "#/$defs/adoption_event" }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "title_registered": {
+      "type": "object",
+      "required": ["title_id", "title", "discipline"],
+      "properties": {
+        "title_id": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "discipline": { "type": "string", "minLength": 1 }
+      }
+    },
+    "edition_released": {
+      "type": "object",
+      "required": ["edition_id", "title_id", "edition_label"],
+      "properties": {
+        "edition_id": { "type": "string", "minLength": 1 },
+        "title_id": { "type": "string", "minLength": 1 },
+        "edition_label": { "type": "string", "minLength": 1 }
+      }
+    },
+    "printing_run_released": {
+      "type": "object",
+      "required": ["printing_id", "edition_id", "impression", "printed_at", "quantity"],
+      "properties": {
+        "printing_id": { "type": "string", "minLength": 1 },
+        "edition_id": { "type": "string", "minLength": 1 },
+        "impression": { "type": "string", "minLength": 1 },
+        "printed_at": { "type": "string", "format": "date-time" },
+        "quantity": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "inventory_disposed": {
+      "type": "object",
+      "required": ["printing_id", "action", "quantity"],
+      "properties": {
+        "printing_id": { "type": "string", "minLength": 1 },
+        "action": { "enum": ["hold", "recall", "destroy", "reissue_label"] },
+        "quantity": { "type": "integer", "minimum": 0 },
+        "correction_id": { "type": "string" },
+        "reason": { "type": "string" }
+      }
+    },
+    "content_published": {
+      "type": "object",
+      "required": ["unit_id", "edition_id", "unit_kind"],
+      "properties": {
+        "unit_id": { "type": "string", "minLength": 1 },
+        "edition_id": { "type": "string", "minLength": 1 },
+        "unit_kind": { "enum": ["chapter", "concept", "case", "regulation_citation", "image"] },
+        "code": { "type": "string" },
+        "title": { "type": "string" },
+        "platform": { "type": "string" },
+        "citation": { "type": "string" },
+        "licensor": { "type": "string" },
+        "license_valid_until": { "type": "string", "format": "date-time" },
+        "anchor_unit_id": { "type": "string" }
+      }
+    },
+    "image_usage": {
+      "type": "object",
+      "required": ["image_unit_id", "usage_kind", "location"],
+      "properties": {
+        "image_unit_id": { "type": "string", "minLength": 1 },
+        "usage_kind": { "enum": ["digital_courseware", "public_page"] },
+        "location": { "type": "string", "minLength": 1 }
+      }
+    },
+    "content_superseded": {
+      "type": "object",
+      "description": "标注失效并指向替代材料；不修改、不删除原单元事件。",
+      "required": ["unit_id", "reason", "replacement_unit_id"],
+      "properties": {
+        "unit_id": { "type": "string", "minLength": 1 },
+        "reason": { "enum": ["case_invalid", "platform_offline", "regulation_updated", "other"] },
+        "replacement_unit_id": { "type": "string", "minLength": 1 },
+        "note": { "type": "string" }
+      }
+    },
+    "supplement_published": {
+      "type": "object",
+      "required": ["unit_id", "applies_edition_ids", "kind", "title"],
+      "properties": {
+        "unit_id": { "type": "string", "minLength": 1 },
+        "applies_edition_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "anchor_unit_id": { "type": "string" },
+        "correction_id": { "type": "string" },
+        "kind": { "enum": ["errata", "replacement_case", "regulation_update", "teaching_note"] },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "issue_reported": {
+      "type": "object",
+      "description": "dedupe_key 相同的重复上报只能走 ISSUE_DEDUPED，不得产生第二条更正。",
+      "required": ["issue_id", "dedupe_key", "edition_id", "unit_id", "severity"],
+      "properties": {
+        "issue_id": { "type": "string", "minLength": 1 },
+        "dedupe_key": { "type": "string", "minLength": 1 },
+        "edition_id": { "type": "string", "minLength": 1 },
+        "printing_id": { "type": "string" },
+        "unit_id": { "type": "string", "minLength": 1 },
+        "severity": { "enum": ["urgent", "normal"] },
+        "reporter_role": { "type": "string" }
+      }
+    },
+    "issue_deduped": {
+      "type": "object",
+      "required": ["issue_id", "duplicate_of"],
+      "properties": {
+        "issue_id": { "type": "string", "minLength": 1 },
+        "duplicate_of": { "type": "string", "minLength": 1 }
+      }
+    },
+    "review_event": {
+      "type": "object",
+      "required": ["issue_id", "reviewer_id", "review_role"],
+      "properties": {
+        "issue_id": { "type": "string", "minLength": 1 },
+        "reviewer_id": { "type": "string", "minLength": 1 },
+        "review_role": { "enum": ["author", "policy_expert", "chief_editor"] },
+        "note": { "type": "string" },
+        "reason": { "type": "string" },
+        "dissent": {
+          "type": "object",
+          "required": ["reviewer_id", "position"],
+          "properties": {
+            "reviewer_id": { "type": "string", "minLength": 1 },
+            "position": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "correction_published": {
+      "type": "object",
+      "description": "scope=electronic_errata 只发布电子勘误，绝不回写印次内容；实体处置通过 INVENTORY_DISPOSED 单独记录。",
+      "required": ["issue_id", "correction_id", "affects_printing_ids", "affects_unit_ids", "scope"],
+      "properties": {
+        "issue_id": { "type": "string", "minLength": 1 },
+        "correction_id": { "type": "string", "minLength": 1 },
+        "affects_printing_ids": { "type": "array", "items": { "type": "string" } },
+        "affects_unit_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "scope": { "enum": ["electronic_errata", "reprint", "errata_and_reprint"] },
+        "supplement_unit_id": { "type": "string" }
+      }
+    },
+    "notification_sent": {
+      "type": "object",
+      "required": ["correction_id", "adoption_id", "school_id", "channel"],
+      "properties": {
+        "correction_id": { "type": "string", "minLength": 1 },
+        "adoption_id": { "type": "string", "minLength": 1 },
+        "school_id": { "type": "string", "minLength": 1 },
+        "channel": { "enum": ["platform", "email", "mail"] }
+      }
+    },
+    "notice_acknowledged": {
+      "type": "object",
+      "required": ["correction_id", "adoption_id", "school_id"],
+      "properties": {
+        "correction_id": { "type": "string", "minLength": 1 },
+        "adoption_id": { "type": "string", "minLength": 1 },
+        "school_id": { "type": "string", "minLength": 1 }
+      }
+    },
+    "adoption_event": {
+      "type": "object",
+      "properties": {
+        "adoption_id": { "type": "string", "minLength": 1 },
+        "school_id": { "type": "string" },
+        "school_name": { "type": "string" },
+        "course": { "type": "string" },
+        "edition_id": { "type": "string" },
+        "printing_id": { "type": "string" },
+        "term": { "type": "string" },
+        "frozen_until": { "type": "string", "format": "date-time" },
+        "scheduled_at": { "type": "string", "format": "date-time" },
+        "applied_at": { "type": "string", "format": "date-time" },
+        "correction_ids": { "type": "array", "items": { "type": "string" } },
+        "supplement_unit_ids": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
 }

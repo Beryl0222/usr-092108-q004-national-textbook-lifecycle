@@ -1,0 +1,652 @@
+[
+  {
+    "event_id": "evt-001",
+    "event_type": "TITLE_REGISTERED",
+    "aggregate_type": "textbook_catalog",
+    "aggregate_id": "catalog-journalism",
+    "occurred_at": "2026-07-05T09:00:00+08:00",
+    "version": 1,
+    "summary": "登记国家级新闻学教材书目：《新闻学概论》",
+    "payload": {
+      "title_id": "tit-j101",
+      "title": "新闻学概论",
+      "discipline": "新闻学"
+    }
+  },
+  {
+    "event_id": "evt-002",
+    "event_type": "TITLE_REGISTERED",
+    "aggregate_type": "textbook_catalog",
+    "aggregate_id": "catalog-journalism",
+    "occurred_at": "2026-07-05T09:05:00+08:00",
+    "version": 2,
+    "summary": "登记国家级新闻学教材书目：《新闻传播伦理与法规》",
+    "payload": {
+      "title_id": "tit-j202",
+      "title": "新闻传播伦理与法规",
+      "discipline": "新闻学"
+    }
+  },
+  {
+    "event_id": "evt-003",
+    "event_type": "EDITION_RELEASED",
+    "aggregate_type": "textbook_edition",
+    "aggregate_id": "ed-j101-v1",
+    "occurred_at": "2026-07-08T10:00:00+08:00",
+    "version": 1,
+    "summary": "《新闻学概论》第1版定稿发布",
+    "payload": {
+      "edition_id": "ed-j101-v1",
+      "title_id": "tit-j101",
+      "edition_label": "第1版"
+    }
+  },
+  {
+    "event_id": "evt-004",
+    "event_type": "EDITION_RELEASED",
+    "aggregate_type": "textbook_edition",
+    "aggregate_id": "ed-j202-v1",
+    "occurred_at": "2026-07-08T10:10:00+08:00",
+    "version": 1,
+    "summary": "《新闻传播伦理与法规》第1版定稿发布",
+    "payload": {
+      "edition_id": "ed-j202-v1",
+      "title_id": "tit-j202",
+      "edition_label": "第1版"
+    }
+  },
+  {
+    "event_id": "evt-005",
+    "event_type": "PRINTING_RUN_RELEASED",
+    "aggregate_type": "printing_run",
+    "aggregate_id": "pr-j101-1",
+    "occurred_at": "2026-07-20T08:00:00+08:00",
+    "version": 1,
+    "summary": "《新闻学概论》第1版第1次印刷入库 30000 册",
+    "payload": {
+      "printing_id": "pr-j101-1",
+      "edition_id": "ed-j101-v1",
+      "impression": "第1次印刷",
+      "printed_at": "2026-07-18T08:00:00+08:00",
+      "quantity": 30000
+    }
+  },
+  {
+    "event_id": "evt-006",
+    "event_type": "PRINTING_RUN_RELEASED",
+    "aggregate_type": "printing_run",
+    "aggregate_id": "pr-j202-1",
+    "occurred_at": "2026-07-20T08:10:00+08:00",
+    "version": 1,
+    "summary": "《新闻传播伦理与法规》第1版第1次印刷入库 20000 册",
+    "payload": {
+      "printing_id": "pr-j202-1",
+      "edition_id": "ed-j202-v1",
+      "impression": "第1次印刷",
+      "printed_at": "2026-07-18T08:10:00+08:00",
+      "quantity": 20000
+    }
+  },
+  {
+    "event_id": "evt-007",
+    "event_type": "CHAPTER_PUBLISHED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "ch-08",
+    "occurred_at": "2026-07-25T14:00:00+08:00",
+    "version": 1,
+    "summary": "第8章《深度伪造与平台治理》定稿",
+    "payload": {
+      "unit_id": "ch-08",
+      "edition_id": "ed-j101-v1",
+      "unit_kind": "chapter",
+      "code": "第8章",
+      "title": "深度伪造与平台治理"
+    }
+  },
+  {
+    "event_id": "evt-008",
+    "event_type": "CONCEPT_PUBLISHED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "con-deepfake-norm",
+    "occurred_at": "2026-07-25T14:05:00+08:00",
+    "version": 1,
+    "summary": "概念条目“深度伪造内容的标识义务”随版定稿",
+    "payload": {
+      "unit_id": "con-deepfake-norm",
+      "edition_id": "ed-j101-v1",
+      "unit_kind": "concept",
+      "code": "8.2.3",
+      "title": "深度伪造内容的标识义务"
+    }
+  },
+  {
+    "event_id": "evt-009",
+    "event_type": "CASE_PUBLISHED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "case-df-platform-01",
+    "occurred_at": "2026-07-25T14:10:00+08:00",
+    "version": 1,
+    "summary": "案例“某短视频平台深度伪造标识规则争议”随版定稿",
+    "payload": {
+      "unit_id": "case-df-platform-01",
+      "edition_id": "ed-j101-v1",
+      "unit_kind": "case",
+      "code": "案例8-3",
+      "title": "某短视频平台深度伪造标识规则争议",
+      "platform": "示例短视频平台A"
+    }
+  },
+  {
+    "event_id": "evt-010",
+    "event_type": "REGULATION_CITED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "reg-algo-01",
+    "occurred_at": "2026-07-25T14:15:00+08:00",
+    "version": 1,
+    "summary": "法规引用：算法推荐管理相关规定（2022年文本）",
+    "payload": {
+      "unit_id": "reg-algo-01",
+      "edition_id": "ed-j101-v1",
+      "unit_kind": "regulation_citation",
+      "code": "引注8-11",
+      "title": "互联网信息服务算法推荐管理规定（2022年文本引注）",
+      "citation": "2022年发布文本相关条款"
+    }
+  },
+  {
+    "event_id": "evt-011",
+    "event_type": "IMAGE_LICENSED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "img-ch08-01",
+    "occurred_at": "2026-07-25T14:20:00+08:00",
+    "version": 1,
+    "summary": "第8章配图“合成内容标识示意”取得授权，有效期至2026年底",
+    "payload": {
+      "unit_id": "img-ch08-01",
+      "edition_id": "ed-j101-v1",
+      "unit_kind": "image",
+      "code": "图8-1",
+      "title": "合成内容标识示意图",
+      "licensor": "某视觉素材社",
+      "license_valid_until": "2026-12-31T23:59:59+08:00"
+    }
+  },
+  {
+    "event_id": "evt-012",
+    "event_type": "IMAGE_USAGE_REGISTERED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "img-ch08-01",
+    "occurred_at": "2026-07-26T09:00:00+08:00",
+    "version": 2,
+    "summary": "图8-1 用于数字课件《深度伪造案例教学包》",
+    "payload": {
+      "image_unit_id": "img-ch08-01",
+      "usage_kind": "digital_courseware",
+      "location": "数字课件：深度伪造案例教学包 v3 / 第12页"
+    }
+  },
+  {
+    "event_id": "evt-013",
+    "event_type": "IMAGE_USAGE_REGISTERED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "img-ch08-01",
+    "occurred_at": "2026-07-26T09:05:00+08:00",
+    "version": 3,
+    "summary": "图8-1 用于教材配套公开页面",
+    "payload": {
+      "image_unit_id": "img-ch08-01",
+      "usage_kind": "public_page",
+      "location": "https://textbook.example.edu.cn/j101/ch08/fig-01"
+    }
+  },
+  {
+    "event_id": "evt-014",
+    "event_type": "ADOPTION_REGISTERED",
+    "aggregate_type": "course_adoption",
+    "aggregate_id": "adopt-jhdx-2026autumn",
+    "occurred_at": "2026-09-01T11:00:00+08:00",
+    "version": 1,
+    "summary": "京华大学新闻学院2026秋季学期采用第1次印次",
+    "payload": {
+      "adoption_id": "adopt-jhdx-2026autumn",
+      "school_id": "school-jhdx",
+      "school_name": "京华大学",
+      "course": "新闻学原理（2026秋）",
+      "edition_id": "ed-j101-v1",
+      "printing_id": "pr-j101-1",
+      "term": "2026秋季学期"
+    }
+  },
+  {
+    "event_id": "evt-015",
+    "event_type": "ISSUE_REPORTED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-001",
+    "occurred_at": "2026-09-02T08:30:00+08:00",
+    "version": 1,
+    "summary": "紧急上报：概念条目8.2.3的标识义务表述与最新监管口径不一致",
+    "payload": {
+      "issue_id": "issue-2026-001",
+      "dedupe_key": "j101|pr-j101-1|con-deepfake-norm|labeling-duty",
+      "edition_id": "ed-j101-v1",
+      "printing_id": "pr-j101-1",
+      "unit_id": "con-deepfake-norm",
+      "severity": "urgent",
+      "reporter_role": "授课教师"
+    }
+  },
+  {
+    "event_id": "evt-016",
+    "event_type": "ISSUE_DEDUPED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-002",
+    "occurred_at": "2026-09-03T07:50:00+08:00",
+    "version": 1,
+    "summary": "另一院校重复上报同一问题，按 dedupe_key 挂接到 issue-2026-001",
+    "payload": {
+      "issue_id": "issue-2026-002",
+      "duplicate_of": "issue-2026-001"
+    }
+  },
+  {
+    "event_id": "evt-017",
+    "event_type": "REVIEW_ASSIGNED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-001",
+    "occurred_at": "2026-09-03T09:00:00+08:00",
+    "version": 2,
+    "summary": "分工：主编委作者陈静复核学理表述",
+    "payload": {
+      "issue_id": "issue-2026-001",
+      "reviewer_id": "rev-chen",
+      "review_role": "author",
+      "note": "负责核对教材原有表述与替代措辞"
+    }
+  },
+  {
+    "event_id": "evt-018",
+    "event_type": "REVIEW_ASSIGNED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-001",
+    "occurred_at": "2026-09-03T09:05:00+08:00",
+    "version": 3,
+    "summary": "分工：政策专家李锐复核监管口径",
+    "payload": {
+      "issue_id": "issue-2026-001",
+      "reviewer_id": "rev-li",
+      "review_role": "policy_expert",
+      "note": "负责核对最新监管规范文本"
+    }
+  },
+  {
+    "event_id": "evt-019",
+    "event_type": "REVIEW_ASSIGNED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-001",
+    "occurred_at": "2026-09-03T09:10:00+08:00",
+    "version": 4,
+    "summary": "紧急问题追加分工：主编王岚终审",
+    "payload": {
+      "issue_id": "issue-2026-001",
+      "reviewer_id": "rev-wang",
+      "review_role": "chief_editor"
+    }
+  },
+  {
+    "event_id": "evt-020",
+    "event_type": "REVIEW_APPROVED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-001",
+    "occurred_at": "2026-09-04T10:00:00+08:00",
+    "version": 5,
+    "summary": "作者复核通过：认可替代措辞",
+    "payload": {
+      "issue_id": "issue-2026-001",
+      "reviewer_id": "rev-chen",
+      "review_role": "author"
+    }
+  },
+  {
+    "event_id": "evt-021",
+    "event_type": "REVIEW_HELD",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-001",
+    "occurred_at": "2026-09-04T15:00:00+08:00",
+    "version": 6,
+    "summary": "政策专家暂缓：勘误措辞可能弱化平台义务，提交异议",
+    "payload": {
+      "issue_id": "issue-2026-001",
+      "reviewer_id": "rev-li",
+      "review_role": "policy_expert",
+      "reason": "初版勘误仅要求“显著提示”，与现行口径的强制标识要求存在落差",
+      "dissent": {
+        "reviewer_id": "rev-li",
+        "position": "建议明确平台对合成内容的事前标识义务，不宜弱化为提示性义务"
+      }
+    }
+  },
+  {
+    "event_id": "evt-022",
+    "event_type": "REVIEW_APPROVED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-001",
+    "occurred_at": "2026-09-05T11:00:00+08:00",
+    "version": 7,
+    "summary": "政策专家撤回暂缓：按其意见强化措辞后批准，此前异议记录保留",
+    "payload": {
+      "issue_id": "issue-2026-001",
+      "reviewer_id": "rev-li",
+      "review_role": "policy_expert",
+      "note": "采纳强制标识义务表述；9月4日异议意见留档备查"
+    }
+  },
+  {
+    "event_id": "evt-023",
+    "event_type": "REVIEW_APPROVED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-001",
+    "occurred_at": "2026-09-05T16:00:00+08:00",
+    "version": 8,
+    "summary": "主编终审通过，更正准予发布",
+    "payload": {
+      "issue_id": "issue-2026-001",
+      "reviewer_id": "rev-wang",
+      "review_role": "chief_editor"
+    }
+  },
+  {
+    "event_id": "evt-024",
+    "event_type": "SUPPLEMENT_PUBLISHED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "sup-errata-001",
+    "occurred_at": "2026-09-05T17:00:00+08:00",
+    "version": 1,
+    "summary": "发布电子勘误《8.2.3 标识义务表述更正》，扫码可见，不改动纸书原文",
+    "payload": {
+      "unit_id": "sup-errata-001",
+      "applies_edition_ids": ["ed-j101-v1"],
+      "anchor_unit_id": "con-deepfake-norm",
+      "correction_id": "cor-2026-001",
+      "kind": "errata",
+      "title": "电子勘误：8.2.3 深度伪造内容的标识义务（2026-09）"
+    }
+  },
+  {
+    "event_id": "evt-025",
+    "event_type": "CORRECTION_PUBLISHED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "cor-2026-001",
+    "occurred_at": "2026-09-06T09:00:00+08:00",
+    "version": 1,
+    "summary": "发布紧急更正 cor-2026-001：第1次印次随附电子勘误，后续重印直接修正",
+    "payload": {
+      "issue_id": "issue-2026-001",
+      "correction_id": "cor-2026-001",
+      "affects_printing_ids": ["pr-j101-1"],
+      "affects_unit_ids": ["con-deepfake-norm"],
+      "scope": "errata_and_reprint",
+      "supplement_unit_id": "sup-errata-001"
+    }
+  },
+  {
+    "event_id": "evt-026",
+    "event_type": "INVENTORY_DISPOSED",
+    "aggregate_type": "printing_run",
+    "aggregate_id": "pr-j101-1",
+    "occurred_at": "2026-09-06T09:30:00+08:00",
+    "version": 2,
+    "summary": "封存第1次印次剩余库存 8000 册，暂停发货待处置",
+    "payload": {
+      "printing_id": "pr-j101-1",
+      "action": "hold",
+      "quantity": 8000,
+      "correction_id": "cor-2026-001",
+      "reason": "紧急勘误 cor-2026-001 待随附"
+    }
+  },
+  {
+    "event_id": "evt-027",
+    "event_type": "NOTIFICATION_SENT",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "cor-2026-001",
+    "occurred_at": "2026-09-07T10:00:00+08:00",
+    "version": 2,
+    "summary": "向采用第1次印次的京华大学推送紧急纠错通知",
+    "payload": {
+      "correction_id": "cor-2026-001",
+      "adoption_id": "adopt-jhdx-2026autumn",
+      "school_id": "school-jhdx",
+      "channel": "platform"
+    }
+  },
+  {
+    "event_id": "evt-028",
+    "event_type": "NOTICE_ACKNOWLEDGED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "cor-2026-001",
+    "occurred_at": "2026-09-09T14:20:00+08:00",
+    "version": 3,
+    "summary": "京华大学教研室确认收到并知悉勘误内容",
+    "payload": {
+      "correction_id": "cor-2026-001",
+      "adoption_id": "adopt-jhdx-2026autumn",
+      "school_id": "school-jhdx"
+    }
+  },
+  {
+    "event_id": "evt-029",
+    "event_type": "PRINTING_RUN_RELEASED",
+    "aggregate_type": "printing_run",
+    "aggregate_id": "pr-j101-2",
+    "occurred_at": "2026-09-10T08:00:00+08:00",
+    "version": 1,
+    "summary": "第2次印刷 15000 册，已按 cor-2026-001 修正印版",
+    "payload": {
+      "printing_id": "pr-j101-2",
+      "edition_id": "ed-j101-v1",
+      "impression": "第2次印刷",
+      "printed_at": "2026-09-09T08:00:00+08:00",
+      "quantity": 15000
+    }
+  },
+  {
+    "event_id": "evt-030",
+    "event_type": "INVENTORY_DISPOSED",
+    "aggregate_type": "printing_run",
+    "aggregate_id": "pr-j101-1",
+    "occurred_at": "2026-09-10T09:00:00+08:00",
+    "version": 3,
+    "summary": "解除封存：剩余库存随附勘误卡后重新发货",
+    "payload": {
+      "printing_id": "pr-j101-1",
+      "action": "reissue_label",
+      "quantity": 8000,
+      "correction_id": "cor-2026-001",
+      "reason": "逐册夹配电子勘误扫码卡，指向 sup-errata-001"
+    }
+  },
+  {
+    "event_id": "evt-031",
+    "event_type": "ADOPTION_REGISTERED",
+    "aggregate_type": "course_adoption",
+    "aggregate_id": "adopt-bfxy-2026autumn",
+    "occurred_at": "2026-09-12T10:00:00+08:00",
+    "version": 1,
+    "summary": "北方学院采用第2次印次（已含修正），不在紧急通知范围",
+    "payload": {
+      "adoption_id": "adopt-bfxy-2026autumn",
+      "school_id": "school-bfxy",
+      "school_name": "北方学院",
+      "course": "新媒体概论（2026秋）",
+      "edition_id": "ed-j101-v1",
+      "printing_id": "pr-j101-2",
+      "term": "2026秋季学期"
+    }
+  },
+  {
+    "event_id": "evt-032",
+    "event_type": "CONTENT_SUPERSEDED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "case-df-platform-01",
+    "occurred_at": "2026-09-15T13:00:00+08:00",
+    "version": 2,
+    "summary": "案例8-3 所涉平台规则页面下线，原案例标注失效并指向替代案例",
+    "payload": {
+      "unit_id": "case-df-platform-01",
+      "reason": "platform_offline",
+      "replacement_unit_id": "sup-case-002",
+      "note": "原平台规则中心于2026-09-15下线，课堂原依据保留可查，不再作为现行依据"
+    }
+  },
+  {
+    "event_id": "evt-033",
+    "event_type": "SUPPLEMENT_PUBLISHED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "sup-case-002",
+    "occurred_at": "2026-09-16T10:00:00+08:00",
+    "version": 1,
+    "summary": "发布替代案例《跨平台合成内容标识义务对照》",
+    "payload": {
+      "unit_id": "sup-case-002",
+      "applies_edition_ids": ["ed-j101-v1"],
+      "anchor_unit_id": "case-df-platform-01",
+      "kind": "replacement_case",
+      "title": "替代案例：跨平台合成内容标识义务对照（2026-09）"
+    }
+  },
+  {
+    "event_id": "evt-034",
+    "event_type": "CONTENT_SUPERSEDED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "reg-algo-01",
+    "occurred_at": "2026-09-18T16:00:00+08:00",
+    "version": 2,
+    "summary": "引注8-11 依据的规定文本完成修订，原引注标注更新并指向法规更新材料",
+    "payload": {
+      "unit_id": "reg-algo-01",
+      "reason": "regulation_updated",
+      "replacement_unit_id": "sup-reg-003",
+      "note": "2022年文本引注保留，标注修订情况，不反向改写原书引注"
+    }
+  },
+  {
+    "event_id": "evt-035",
+    "event_type": "SUPPLEMENT_PUBLISHED",
+    "aggregate_type": "content_unit",
+    "aggregate_id": "sup-reg-003",
+    "occurred_at": "2026-09-19T10:00:00+08:00",
+    "version": 1,
+    "summary": "发布法规更新材料，同时适用于两部教材的相关版次",
+    "payload": {
+      "unit_id": "sup-reg-003",
+      "applies_edition_ids": ["ed-j101-v1", "ed-j202-v1"],
+      "anchor_unit_id": "reg-algo-01",
+      "kind": "regulation_update",
+      "title": "法规更新：算法推荐与合成内容规范条文对照（2026-09）"
+    }
+  },
+  {
+    "event_id": "evt-036",
+    "event_type": "ISSUE_REPORTED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-003",
+    "occurred_at": "2026-09-20T09:00:00+08:00",
+    "version": 1,
+    "summary": "上报争议：第8章关于平台自治与法律责任边界的表述需斟酌",
+    "payload": {
+      "issue_id": "issue-2026-003",
+      "dedupe_key": "j101|ch-08|platform-self-governance-boundary",
+      "edition_id": "ed-j101-v1",
+      "unit_id": "ch-08",
+      "severity": "normal",
+      "reporter_role": "政策专家"
+    }
+  },
+  {
+    "event_id": "evt-037",
+    "event_type": "REVIEW_ASSIGNED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-003",
+    "occurred_at": "2026-09-20T09:30:00+08:00",
+    "version": 2,
+    "summary": "分工：作者复核第8章相关段落",
+    "payload": {
+      "issue_id": "issue-2026-003",
+      "reviewer_id": "rev-chen",
+      "review_role": "author"
+    }
+  },
+  {
+    "event_id": "evt-038",
+    "event_type": "REVIEW_ASSIGNED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-003",
+    "occurred_at": "2026-09-20T09:35:00+08:00",
+    "version": 3,
+    "summary": "分工：政策专家复核责任边界表述",
+    "payload": {
+      "issue_id": "issue-2026-003",
+      "reviewer_id": "rev-li",
+      "review_role": "policy_expert"
+    }
+  },
+  {
+    "event_id": "evt-039",
+    "event_type": "REVIEW_APPROVED",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-003",
+    "occurred_at": "2026-09-20T14:00:00+08:00",
+    "version": 4,
+    "summary": "作者复核通过",
+    "payload": {
+      "issue_id": "issue-2026-003",
+      "reviewer_id": "rev-chen",
+      "review_role": "author"
+    }
+  },
+  {
+    "event_id": "evt-040",
+    "event_type": "REVIEW_HELD",
+    "aggregate_type": "correction_notice",
+    "aggregate_id": "issue-2026-003",
+    "occurred_at": "2026-09-20T17:00:00+08:00",
+    "version": 5,
+    "summary": "政策专家暂缓且异议未撤回：争议表述暂不发布，异议保留待下学期论证",
+    "payload": {
+      "issue_id": "issue-2026-003",
+      "reviewer_id": "rev-li",
+      "review_role": "policy_expert",
+      "reason": "平台自治边界涉及尚未定稿的执法口径",
+      "dissent": {
+        "reviewer_id": "rev-li",
+        "position": "在主管部门口径明确前，教材不宜将平台自律表述为责任豁免依据"
+      }
+    }
+  },
+  {
+    "event_id": "evt-041",
+    "event_type": "ADOPTION_FROZEN",
+    "aggregate_type": "course_adoption",
+    "aggregate_id": "adopt-jhdx-2026autumn",
+    "occurred_at": "2026-09-21T08:30:00+08:00",
+    "version": 2,
+    "summary": "京华大学授课教师冻结本学期教学基线至学期末",
+    "payload": {
+      "adoption_id": "adopt-jhdx-2026autumn",
+      "frozen_until": "2027-01-31T23:59:59+08:00"
+    }
+  },
+  {
+    "event_id": "evt-042",
+    "event_type": "UPDATE_SCHEDULED",
+    "aggregate_type": "course_adoption",
+    "aggregate_id": "adopt-jhdx-2026autumn",
+    "occurred_at": "2026-09-21T08:35:00+08:00",
+    "version": 3,
+    "summary": "安排下学期初应用冻结期内累积的勘误与替代材料",
+    "payload": {
+      "adoption_id": "adopt-jhdx-2026autumn",
+      "scheduled_at": "2027-02-22T09:00:00+08:00"
+    }
+  }
+]
